@@ -1,0 +1,7 @@
+[user]
+10.0.2.4
+
+[user:vars]
+ansible_user=vagrant
+ansible_password=vagrant
+ansible_become_password=vagrant
