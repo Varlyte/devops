@@ -6,8 +6,15 @@ services:
       - 8081:8081
       - 8080:8080
     restart: always
-  nginx:
-    depends_on:
-      - reverseproxy
-    image: reverseproxy
-    restart: always
+  web:
+      build:
+        context: ./
+      volumes:
+        - .:/src
+      command: npm run start
+      ports:
+        - 8081:8081
+        - 8080:8080
+      environment:
+        NODE_ENV: development
+        DEBUG: node-demo-DC:*
