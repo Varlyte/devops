@@ -6,8 +6,8 @@ services:
       - 8081:8081
       - 8080:8080
     restart: always
-    nginx:
-      depends_on:
-        - reverseproxy
-      image: reverseproxy
-      restart: always
+  nginx:
+    depends_on:
+      - reverseproxy
+    image: reverseproxy
+    restart: always
